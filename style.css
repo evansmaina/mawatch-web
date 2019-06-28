@@ -1,0 +1,459 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    color: white;
+    
+}
+
+nav{
+ background-color:khaki;
+ position: relative;
+
+
+}
+.cartbtn:hover{
+    transform: scale(1.1,1.1);
+    transition: all 0.2s linear;
+    margin-left: 2rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.cart-items{
+    position: absolute;
+    top:-6px;
+    right:-4px;
+    border-radius:30%;
+    background-color: darkkhaki;
+    padding:0.5px;
+    color: white;
+}
+
+.linksnav{
+    position: absolute;
+    right: 3.5rem;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 25px;
+    transition: 0.6s ease;
+    font-style: italic;
+}
+.navbar li a:hover{
+   
+    background-color: darkkhaki;
+}
+.navbar .active{
+    background-color: darkkhaki;
+    border-radius: 25px;
+}
+
+.headcontainer{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(welcome.jpeg);
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+    
+}
+.welcome{
+    color: white;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+input[type=search]{
+    border-radius: 25px;
+    text-align: center;
+    width: 100%;
+    margin-left: 3rem;
+}
+.searchdiv{
+    margin: 0;
+    padding:0;
+}
+
+#inputSearch{
+     border-radius: 25px;
+    text-align: center;
+    width: 100%;
+    margin-right: 3rem;
+}
+.orange{
+    width: 50%;
+}
+.imagey{
+    overflow: hidden;
+    width: 235px
+    height: 300px;
+    position: relative;
+    margin: 0 20 30 0;
+    border-radius: 10px;
+}
+.imagey>img{
+    max-width: 100%;
+    
+}
+.transper{
+    background:rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    position: absolute;
+    opacity: 0;
+}
+.imagey:hover .transper{
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+.purchase-btn{
+    position: absolute;
+    top: 70%;
+    right: 0;
+    border: none;
+    text-transform: uppercase;
+    padding: 0.5rem 0.75rem;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    margin-right: -250px;
+    transition: all 0.3s linear;
+    background-color: khaki;
+    border-radius: 10px;
+    
+    cursor: pointer;
+}
+.purchase-btn:hover {
+    color: white;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+.imagey:hover .purchase-btn{
+    margin-right: 100px;
+    transition: all 0.4s linear;
+    
+}
+.product-backg{
+    background-color: beige;
+    transition: all 0.3s ease;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+.product-backg h3 {
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+}
+
+.product-backg h4 {
+    text-transform: capitalize;
+    margin-top: 0.7rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    background-color:darkkhaki;
+    border-radius: 20px;
+    /*    display: inline-block;*/
+    color: white;
+}
+.product-backg:hover{
+    transform: scale(1.06,1.06);
+    transition: all 0.3s ease;
+    
+}
+.padding{
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+    margin-top: 1.2rem;
+}
+.products{
+    background-color: darkkhaki;
+    border-radius: 10px;
+}
+.cart-img:hover{
+    transform: scale(1.2,1.2);
+}
+
+/*cart section*/
+.cart-overlay{
+    position: fixed;
+    top:0;
+    right:0;
+    width:100%;
+    height:100%;
+    transition:all 0.5s linear;
+    background: rgb(240,157,81,0.3);
+    z-index: 2;
+    visibility: hidden;
+    
+}
+.cart{
+    position:fixed;
+    top:0px;;
+    right:0;
+    width:100%;
+    height:100%;
+    overflow:scroll;
+    z-index:3;
+    background:rgb(231,226,221);
+    padding:1.5rem;
+    transition:all 0.5s linear;
+    transform: translateX(100%);
+    
+}
+.showcart{
+    transform: translate(0);
+    transition:all 0.5s linear;
+}
+.transparentBcg{
+    visibility: visible;
+    transition:all 0.5s linear;
+}
+
+@media(max-width:2300px){
+    .cart{
+        width:30vw;
+        min-width: 450px;
+      
+    }
+}
+
+@media(max-width:768px){
+    .cart{
+        width:30vw;
+        min-width: 450px;
+      
+    }
+}
+
+.close-cart img{
+    cursor: pointer;
+}
+
+.cart h2{
+    text-transform: capitalize;
+    text-align: center;
+    letter-spacing:0.1rem;
+    margin-bottom:0.5rem;
+    margin-top:4rem;
+}
+/*cart item*/
+.cart-item{
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap:1.5rem;
+    margin:1.5rem 0;
+}
+.cart-imgy{
+    width:75px;
+    height:75px;
+    border-radius:50%;
+}
+.cart-item h4{
+    font-size: 0.85rem;
+    text-transform: capitalize;
+    letter-spacing:0.1rem;
+}
+.cart-item h5{
+    margin: 0.5rem 0;
+    letter-spacing:0.1rem;
+}
+.item-amount{
+    text-align:center;
+}
+.increment{
+    margin-left:0.3rem;
+    border-radius: 50%;
+}
+.decrement{
+    margin-right:0.3rem;
+    border-radius: 50%;
+}
+.increment:hover{
+    cursor: pointer;
+    
+}
+.decrement:hover{
+    cursor: pointer;
+}
+input[type=number]{
+    background-color:rgb(231,226,221);
+    width: 30%;
+}
+.remove-item{
+    color: grey;
+    cursor: pointer;
+}
+/*end of cart item*/
+.cart-footer{
+    margin-top: 2rem;
+    letter-spacing:0.1rem;
+    text-align:center;
+    
+}
+.cart-footer h3{
+    text-transform:capitalize;
+    margin-bottom:1rem;
+}
+/*end of cart*/
+
+.padding2{
+    padding: 1.2rem;
+}
+ul li{
+    list-style-type: none;
+    margin-left: 0;
+    cursor: pointer;
+    
+}
+ul{
+    margin-left: 0;
+}
+.iconpadding{
+    margin-top: 0.7rem;
+}
+.feature{
+    background-color: beige;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-left: 0.7rem;
+    
+}
+#searchwatch{
+    border-radius: 25px;
+    text-align: center;
+    width: 80%;
+    margin-left: 2rem;
+    margin-top:0.5rem; 
+}
+.watch{
+    margin-left: 1.2rem;
+}
+.feature ul li{
+    background-color: darkkhaki;
+    transition: all 0.3s ease;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    
+}
+.feature ul{
+    padding: 1.2rem;
+}
+.feature ul li:hover{
+    transform: scale(1.06,1.06);
+    transition: all 0.3s ease;
+}
+.client-container{
+background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(backgclient.jpg);
+    height: 50vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+}
+.red{
+    width: 50%;
+    border-top: 1px solid #d5d5d5;
+}
+#carouselExampleCaptions .carousel-indicators{
+    bottom: -30px;
+}
+.carousel-inner img{
+    border-radius: 100%;
+    border: 3px solid white;
+}
+.blue{
+ width: 40%;
+}
+.social a img{
+    width: 40px;
+    height: 40px;
+    padding: 0.5rem;
+    margin-left: 0.4rem;
+}
+.social a{
+    text-decoration: none;
+}
+.social a img:hover{
+    transform: scale(1.4,1.4);
+    transition: all 0.3s ease;
+}
+.profilepic{
+    position: absolute;
+    top: -40px;
+    left: calc(50% - 50px);
+    border-radius: 50%;
+      
+}
+.padding3{
+    margin-top: 2rem;
+}
+.card:hover{
+    transition: all 0.5s linear;
+    background-color:khaki;
+}
+.connect{
+    width: 60%;
+}
+.download{
+    background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(download.jpeg);
+    height: 50vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+}
+.btn-cont a{
+    margin-left: 1.2rem;
+}
+footer{
+     background-color:darkkhaki;
+    color: #d5d5d5;
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    position: relative;
+}
+.light{
+    border-top: 3px solid #d5d5d5;
+    width: 70%;
+}
+input[type=email]{
+    border-radius: 25px;
+    text-align: center;
+    width: 80%;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    
+}
+.indigo{
+    border-top: 1px solid #d5d5d5;
+    width: 30%;
+}
+.social-media a{
+    padding: 1.5rem;
+}
+.copywright{
+    background-color: #3f3f3f;
+    color: #d5d5d5;
+}
+.finishline{
+    border-top: 1px solid #d5d5d5; 
+}
+.social-media a img:hover{
+    transform: scale(1.3,1.3);
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
